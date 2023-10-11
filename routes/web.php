@@ -14,5 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('hello');
-});
+    $regards = ['Hello World!','How is goin?','What`s uuuuup!?'];
+    $ascii = ['ฅ^•ﻌ•^ฅ','ʕ •ᴥ•ʔ','(｡•ﻌ•｡)'];
+    $rand = rand(0,2);
+
+
+    return view('hello', compact('regards','ascii','rand'));
+})->name('hello');
+
+Route::get('/sus', function () {
+    $regards = ['Trick or treat, smell my feet!', 'Beware the dark of night!', 'Prepare for a frightful night!'];
+    $ascii = ['↜(͛𖤐෴𖤐)͛ψ','⋆༺𓆩☠︎︎𓆪༻⋆','(¬_¬")'];
+    $rand = rand(0,2);
+
+
+    return view('hello-b', compact('regards','ascii','rand'));
+})->name('hello-b');
